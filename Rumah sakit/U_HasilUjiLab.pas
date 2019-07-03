@@ -1,0 +1,210 @@
+ unit U_HasilUjiLab;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ExtCtrls, StdCtrls, Grids, DBGrids;
+
+type
+  TForm_HasilUjiLab = class(TForm)
+    Button5: TButton;
+    Panel1: TPanel;
+    Button6: TButton;
+    Button7: TButton;
+    Button8: TButton;
+    Button9: TButton;
+    Button10: TButton;
+    Button11: TButton;
+    Label10: TLabel;
+    DBGrid1: TDBGrid;
+    Panel2: TPanel;
+    GroupBox1: TGroupBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Edit6: TEdit;
+    Edit7: TEdit;
+    Edit8: TEdit;
+    Edit10: TEdit;
+    Edit11: TEdit;
+    Edit9: TEdit;
+    GroupBox2: TGroupBox;
+    Label11: TLabel;
+    Edit12: TEdit;
+    Label12: TLabel;
+    Edit13: TEdit;
+    Label13: TLabel;
+    Edit14: TEdit;
+    DBGrid2: TDBGrid;
+    Panel3: TPanel;
+    procedure FormCreate(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
+    procedure Button9Click(Sender: TObject);
+    procedure Button10Click(Sender: TObject);
+    procedure Button11Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form_HasilUjiLab: TForm_HasilUjiLab;
+
+implementation
+
+uses U_PemeriksaanUGD, U_Utama, U_PemeriksaanIGD, U_PemeriksaanICU,
+  U_PemeriksaanDarah, U_PemeriksaanPenyakit, U_PemeriksaanRonsen, Math;
+
+{$R *.dfm}
+
+procedure TForm_HasilUjiLab.FormCreate(Sender: TObject);
+begin
+borderstyle := bsnone;
+windowstate := wsmaximized;
+
+Panel1.Width:=1015;
+Panel1.Top:=0;
+Panel1.Left:=0;
+Panel2.Width:=515;
+Panel2.Left:=480;
+Panel2.Top:=110;
+Panel3.Width:=515;
+Panel3.Left:=480;
+Panel3.Top:=320;
+
+GroupBox1.Width:=405;
+GroupBox1.Height:=320;
+GroupBox1.Top:=105;
+GroupBox1.Left:=30;
+GroupBox2.Width:=405;
+GroupBox2.Height:=120;
+GroupBox2.Top:=435;
+GroupBox2.Left:=30;
+
+Label10.Top:=142;
+Label10.Left:=810;
+
+Edit9.Top:=140;
+Edit9.Left:=875;
+
+DBGrid1.Top:=165;
+DBGrid1.Left:=480;
+DBGrid1.Width:=515;
+DBGrid1.Height:=140;
+DBGrid2.Left:=480;
+DBGrid2.Width:=515;
+DBGrid2.Top:=350;
+DBGrid2.Height:=155;
+
+Button5.Top:=520;
+Button5.Left:=910;
+
+Button6.Top:=50;
+Button6.Left:=10;
+Button6.Width:=115;
+Button7.Top:=50;
+Button7.Left:=130;
+Button7.Width:=115;
+Button8.Top:=50;
+Button8.Left:=250;
+Button8.Width:=115;
+Button9.Top:=50;
+Button9.Left:=370;
+Button9.Width:=115;
+Button10.Top:=50;
+Button10.Left:=490;
+Button10.Width:=115;
+Button11.Top:=50;
+Button11.Left:=610;
+Button11.Width:=115;
+
+end;
+
+procedure TForm_HasilUjiLab.Button5Click(Sender: TObject);
+begin
+close;
+end;
+
+procedure TForm_HasilUjiLab.Button6Click(Sender: TObject);
+begin
+Form_PemeriksaanUGD.Parent:=Form_HasilUjiLab;
+Form_PemeriksaanUGD.Visible:=True;
+Form_PemeriksaanIGD.close;
+Form_PemeriksaanICU.close;
+Form_PemeriksaanDarah.close;
+Form_PemeriksaanPenyakit.close;
+Form_PemeriksaanRonsen.close;
+end;
+
+procedure TForm_HasilUjiLab.Button7Click(Sender: TObject);
+begin
+Form_PemeriksaanIGD.Parent:=Form_HasilUjiLab;
+Form_PemeriksaanIGD.Visible:=True;
+Form_PemeriksaanUGD.close;
+Form_PemeriksaanICU.close;
+Form_PemeriksaanDarah.close;
+Form_PemeriksaanPenyakit.close;
+Form_PemeriksaanRonsen.close;
+end;
+
+procedure TForm_HasilUjiLab.Button8Click(Sender: TObject);
+begin
+Form_PemeriksaanICU.Parent:=Form_HasilUjiLab;
+Form_PemeriksaanICU.Visible:=True;
+Form_PemeriksaanUGD.close;
+Form_PemeriksaanIGD.close;
+Form_PemeriksaanDarah.close;
+Form_PemeriksaanPenyakit.close;
+Form_PemeriksaanRonsen.close;
+end;
+
+procedure TForm_HasilUjiLab.Button9Click(Sender: TObject);
+begin
+Form_PemeriksaanDarah.Parent:=Form_HasilUjiLab;
+Form_PemeriksaanDarah.Visible:=True;
+Form_PemeriksaanUGD.close;
+Form_PemeriksaanIGD.close;
+Form_PemeriksaanICU.close;
+Form_PemeriksaanPenyakit.close;
+Form_PemeriksaanRonsen.close;
+end;
+
+procedure TForm_HasilUjiLab.Button10Click(Sender: TObject);
+begin
+Form_PemeriksaanPenyakit.Parent:=Form_HasilUjiLab;
+Form_PemeriksaanPenyakit.Visible:=True;
+Form_PemeriksaanUGD.close;
+Form_PemeriksaanIGD.close;
+Form_PemeriksaanICU.close;
+Form_PemeriksaanDarah.close;
+Form_PemeriksaanRonsen.close;
+end;
+
+procedure TForm_HasilUjiLab.Button11Click(Sender: TObject);
+begin
+Form_PemeriksaanRonsen.Parent:=Form_HasilUjiLab;
+Form_PemeriksaanRonsen.Visible:=True;
+Form_PemeriksaanUGD.close;
+Form_PemeriksaanIGD.close;
+Form_PemeriksaanICU.close;
+Form_PemeriksaanDarah.close;
+Form_PemeriksaanPenyakit.close;
+end;
+
+end.
